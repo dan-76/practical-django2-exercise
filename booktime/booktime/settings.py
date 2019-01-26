@@ -151,6 +151,8 @@ LOGGING = {
     },
 }
 
+LOGIN_REDIRECT_URL = "/"
+
 if not DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
     EMAIL_HOST_USER = "username"
