@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'django_tables2',
     'widget_tweaks',
+    'rest_framework',
     "main.apps.MainConfig",
 ]
 
@@ -185,3 +186,19 @@ else:
     )
 
 AUTH_USER_MODEL = "main.User"
+
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+        "rest_framework.authentication.SessionAuthentication",
+        "rest_framework.authentication.TokenAuthentication",
+        "rest_framework.authentication.BasicAuthentication",
+    ),
+    "DEFAULT_PERMISSION_CLASSES": (
+        "rest_framework.permissions.DjangoModelPermissions",
+    ),
+    "DEFAULT_FILTER_BACKENDS": (
+        "django_filters.rest_framework.DjangoFilterBackend",
+    ),
+    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
+    "PAGE_SIZE": 100,
+}
