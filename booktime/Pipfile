@@ -10,6 +10,12 @@ django = "*"
 pillow = "*"
 selenium = "*"
 django-webpack-loader = "*"
+django-extensions = "*"
+pydotplus = "*"
+ipython = "*"
+werkzeug = "*"
+factory-boy = "*"
+django-debug-toolbar = "*"
 
 [requires]
 python_version = "3.7"
