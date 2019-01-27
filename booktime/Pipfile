@@ -18,6 +18,7 @@ factory-boy = "*"
 django-debug-toolbar = "*"
 django-tables2 = "*"
 django-filter = "*"
+django-widget-tweaks = "*"
 
 [requires]
 python_version = "3.7"
