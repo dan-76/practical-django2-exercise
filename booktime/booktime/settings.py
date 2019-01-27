@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'webpack_loader',
     'django_extensions',
     'debug_toolbar',
+    'django_tables2',
     "main.apps.MainConfig",
 ]
 
@@ -168,6 +169,7 @@ LOGGING = {
 LOGIN_REDIRECT_URL = "/"
 
 INTERNAL_IPS = ['127.0.0.1']
+DJANGO_TABLES2_TEMPLATE = "django_tables2/bootstrap.html"
 
 if not DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

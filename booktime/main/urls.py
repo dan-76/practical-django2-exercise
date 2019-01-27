@@ -78,4 +78,9 @@ urlpatterns = [
         TemplateView.as_view(template_name="home.html"),
         name="home",
     ),
+    path(
+        "order-dashboard/",
+        views.OrderView.as_view(),
+        name="order_dashboard",
+    ),
 ]

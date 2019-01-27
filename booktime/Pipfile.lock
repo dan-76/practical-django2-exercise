@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "8632eda7e0378584dda7f83867a45866d1ebdaabe13068e09f0f150c1bf6f31c"
+            "sha256": "a23e8d3c79d1dfac8d834852129a26c38c189ba00a8092b300eac9f825593d1a"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -61,6 +61,22 @@
             ],
             "index": "pypi",
             "version": "==2.1.4"
+        },
+        "django-filter": {
+            "hashes": [
+                "sha256:3dafb7d2810790498895c22a1f31b2375795910680ac9c1432821cbedb1e176d",
+                "sha256:a3014de317bef0cd43075a0f08dfa1d319a7ccc5733c3901fb860da70b0dda68"
+            ],
+            "index": "pypi",
+            "version": "==2.1.0"
+        },
+        "django-tables2": {
+            "hashes": [
+                "sha256:a893fca1afe2e95b9739c6428cc6c9735a219f65707e24274df3920f61358525",
+                "sha256:b5f7b4c76160ee927005e52ebea633c86d4529cf84757c0acd5d0434d31798a1"
+            ],
+            "index": "pypi",
+            "version": "==2.0.4"
         },
         "django-webpack-loader": {
             "hashes": [
