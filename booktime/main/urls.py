@@ -7,6 +7,7 @@ from main import models
 from main import forms
 from main import views
 from main import endpoints
+from main import admin
 
 
 router = routers.DefaultRouter()
@@ -94,4 +95,7 @@ urlpatterns = [
         name="order_dashboard",
     ),
     path("api/", include(router.urls)),
+    path("admin/", admin.main_admin.urls),
+    path("office-admin/", admin.central_office_admin.urls),
+    path("dispatch-admin/", admin.dispatchers_admin.urls),
 ]
