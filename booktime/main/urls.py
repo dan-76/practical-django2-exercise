@@ -59,6 +59,9 @@ urlpatterns = [
         ),
         name="login",
     ),
+    path(
+        "logout/", auth_views.LogoutView.as_view(), name="logout"
+    ),
     path('signup/', views.SignupView.as_view(), name="signup"),
     path(
         "product/<slug:slug>/",

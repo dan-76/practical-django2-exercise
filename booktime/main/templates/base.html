@@ -15,17 +15,27 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div
+            class="collapse navbar-collapse"
+            id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item {% if request.path == "/" %}active{% endif %}">
-                    <a class="nav-link" href="/">Home</a>
+            <li
+                class="nav-item {% if request.path == "/" %}active{% endif %}">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+            <li
+                class="nav-item {% if request.path == "/about-us/" %}active{% endif %}">
+                <a class="nav-link" href="/about-us/">About us</a>
+            </li>
+            <li
+                class="nav-item {% if request.path == "/contact-us/" %}active{% endif %}">
+                <a class="nav-link" href="/contact-us/">Contact us</a>
+            </li>
+            {% if user.is_authenticated %}
+                <li class="nav-item">
+                <a class="nav-link" href="{% url "logout" %}?next=/">Log out</a>
                 </li>
-                <li class="nav-item {% if request.path == "/about-us/" %}active{% endif %}">
-                    <a class="nav-link" href="/about-us/">About us</a>
-                </li>
-                <li class="nav-item {% if request.path == "/contact-us/" %}active{% endif %}">
-                    <a class="nav-link" href="/contact-us/">Contact us</a>
-                </li>
+            {% endif %}
             </ul>
         </div>
     </nav>
@@ -33,14 +43,20 @@
     {% for message in messages %}
         <div class="alert alert-{{ message.tags }}">{{ message }}</div>
     {% endfor %}
-    {% if request.basket %}
-        <div>
-            {{ request.basket.count }}
-            items in basket
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm">
+          {% if request.basket %}
+            <div>
+              {{ request.basket.count }}
+              items in basket
+            </div>
+          {% endif %}
+          {% block content %}
+          {% endblock content %}
         </div>
-    {% endif %}
-    {% block content %}
-    {% endblock content %}
+      </div>
+    </div>
 
     <script src="{% static "js/jquery.min.js" %}"></script>
     <script src="{% static "js/popper.min.js" %}"></script>
