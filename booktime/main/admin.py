@@ -16,6 +16,22 @@ from . import models
 logger = logging.getLogger(__name__)
 
 
+def make_active(self, request, queryset):
+    queryset.update(active=True)
+
+
+make_active.short_description = "Mark selected items as active"
+
+
+def make_inactive(self, request, queryset):
+    queryset.update(active=False)
+
+
+make_inactive.short_description = (
+    "Mark selected items as inactive"
+)
+
+
 class ProductAdmin(admin.ModelAdmin):
     list_display = ("name", "slug", "in_stock", "price")
     list_filter = ("active", "in_stock", "date_updated")
@@ -23,6 +39,7 @@ class ProductAdmin(admin.ModelAdmin):
     search_fields = ("name",)
     prepopulated_fields = {"slug": ("name",)}
     autocomplete_fields = ("tags",)
+    actions = [make_active, make_inactive]
    
     # slug is an important field for our site, it is used in
     # all the product URLs. We want to limit the ability to
