@@ -17,7 +17,7 @@
     "jest": "^24.0.0",
     "webpack": "^4.29.0",
     "webpack-bundle-tracker": "^0.4.2-beta",
-    "webpack-cli": "^3.2.1"
+    "webpack-cli": "^3.3.12"
   },
   "jest": {
     "moduleDirectories": [
